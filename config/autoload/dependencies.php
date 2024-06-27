@@ -9,5 +9,11 @@ declare(strict_types=1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
+use Hyperf\Validation\Contract\ValidatorFactoryInterface;
+use Hyperf\Validation\ValidatorFactory;
+
 return [
+    'dependencies' => [
+        ValidatorFactoryInterface::class => ValidatorFactory::class,
+    ],
 ];

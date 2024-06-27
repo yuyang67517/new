@@ -30,6 +30,13 @@ Router::addGroup('/user', function () {
     Router::delete('/{id}', 'App\Controller\UserController@destroy'); // Delete user by ID
 });
 
+Router::addGroup('/jobs', function () {
+    Router::post('', 'App\Controller\JobController@store'); // Create a new job
+    Router::get('/{id}', 'App\Controller\JobController@show'); // Get job by ID
+    Router::put('/{id}', 'App\Controller\JobController@update'); // Update job by ID
+    Router::delete('/{id}', 'App\Controller\JobController@destroy'); // Delete job by ID
+});
+
 Router::get('/test-db', function (HttpResponse $response) {
     try {
         $users = \App\Model\User::all();
